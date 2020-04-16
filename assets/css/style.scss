@@ -2,7 +2,13 @@
 ---
 
 @import "jekyll-theme-minimal";
-/* Add any custom CSS (or Sass, including imports) you'd like immediately after the @import line above. */
+
+.logo {
+  display:flex;
+  white-space:nowrap;
+  overflow:auto;
+}
+
 .cimug-tagline-link {
   color: black;
   font-weight: 600;
