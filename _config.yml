@@ -1,1 +1,6 @@
 theme: jekyll-theme-minimal
+title: CIMug Open Source Initiative
+logo: /assets/img/cimug-logo-white.png
+description: CIMug GitHub Open Source Projects
+show_downloads: false
+google_analytics:

@@ -1,0 +1,28 @@
+---
+---
+
+@import "jekyll-theme-minimal";
+/* Add any custom CSS (or Sass, including imports) you'd like immediately after the @import line above. */
+.cimug-tagline-link {
+  color: black;
+  font-weight: 600;
+}
+
+a.cimug-tagline-link:hover {
+  color: black;
+  font-weight: 600;
+}
+
+.cimug-desc-link {
+  color: #727272;
+  font-weight: 400;
+}
+
+a.cimug-desc-link:hover {
+  color: #727272;
+  font-weight: 600;
+}
+
+.project-title {
+  color: #727272;
+}
