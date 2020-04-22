@@ -18,7 +18,7 @@ The **CIMug Open Source Initiative** is dedicated to providing open source proje
 - Provide a central Repository for CIM related open source projects and tooling
 - Provide a centralized place for promoting collaboration around these projects within the CIM community
 
-To inquire about the CIMug Open Source Initiative or to discuss contributing new projects to the initiative please contact us at [cimug.dev@gmail.com](mailto:cimug.dev@gmail.com?subject=[CIMug&20Open&20Source&20Admin]&20Open&20Source&20Initiatives).
+To inquire about the CIMug Open Source Initiative or to discuss contributing new projects to the initiative please contact us at [github.admin@cimug.org](mailto:github.admin@cimug.org?subject=[CIMug&20Open&20Source&20Admin]&20Open&20Source&20Initiatives).
 
 # Currently Sponsored Projects
 
