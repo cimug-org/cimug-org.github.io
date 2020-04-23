@@ -36,5 +36,5 @@ table th:nth-of-type(3) {
 
  Project | Location | Description  
 ---------|---------|---------
- CIMTool|<a href="CIMTool"><img src="/assets/img/cimtool-logo.png" alt="CIMTool" width="100%" height="100%"/></a>| CIMug fork of Arnold de Vos's CIMTool for the Common Information Model (CIM).     
- cim-compare|<a href="cim-compare"><img src="/assets/img/cim-compare-logo.png" alt="cim-compare" width="100%" height="100%"/>| Command line tool for generating CIM model comparison reports.
+ CIMTool|<a href="CIMTool"><img src="/assets/img/cimtool-logo.png" alt="CIMTool" width="65%" height="65%"/></a>| CIMug fork of Arnold de Vos's CIMTool for the Common Information Model (CIM).     
+ cim-compare|<a href="cim-compare"><img src="/assets/img/cim-compare-logo.png" alt="cim-compare" width="65%" height="65%"/>| Command line tool for generating CIM model comparison reports.
