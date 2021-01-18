@@ -36,6 +36,6 @@ table th:nth-of-type(3) {
 
  Project | Location | Description  
 ---------|---------|---------
- IEC-CIM-Language-Localisation|<a href="IEC-CIM-Language-Localisation"><img src="/assets/img/iec-cim-lang-l10n-logo.png" alt="IEC-CIM-Language-Localisation" style="max-width:100%"/></a>| IEC-CIM language localisation.   
+ IEC-CIM-Language-Localization|<a href="IEC-CIM-Language-Localization"><img src="/assets/img/iec-cim-lang-l10n-logo.png" alt="IEC-CIM-Language-Localization" style="max-width:100%"/></a>| IEC-CIM language localization.   
  CIMTool|<a href="CIMTool"><img src="/assets/img/cimtool-logo.png" alt="CIMTool" style="max-width:100%"/></a>| CIMug fork of Arnold de Vos's CIMTool for the Common Information Model (CIM).     
  cim-compare|<a href="cim-compare"><img src="/assets/img/cim-compare-logo.png" alt="cim-compare" style="max-width:100%"/>| Command line tool for generating CIM model comparison reports.
