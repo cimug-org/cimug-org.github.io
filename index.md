@@ -36,9 +36,9 @@ table th:nth-of-type(3) {
 
  Project | Location | Description  
 ---------|---------|---------
- CIMTool|<a href="/CIMTool"><img src="/assets/img/cimtool-logo.png" alt="CIMTool" style="max-width:100%"/></a>| CIMug fork of Arnold de Vos's CIMTool for the Common Information Model (CIM).
+ CIMTool|<a href="http://ucaiug.io/CIMTool"><img src="/assets/img/cimtool-logo.png" alt="CIMTool" style="max-width:100%"/></a>| CIMug fork of Arnold de Vos's CIMTool for the Common Information Model (CIM).
  IEC-CIM-Language-Localization|<a href="IEC-CIM-Language-Localization"><img src="/assets/img/iec-cim-lang-l10n-logo.png" alt="IEC-CIM-Language-Localization" style="max-width:100%"/></a>| The CIM Community's localisation repo for ontology files that only contain rdfs:Labels in languages other than English.       
- cim-compare|<a href="cim-compare"><img src="/assets/img/cim-compare-logo.png" alt="cim-compare" style="max-width:100%"/>| Command line tool for generating CIM model comparison reports.
+ cim-compare|<a href="/cim-compare"><img src="/assets/img/cim-compare-logo.png" alt="cim-compare" style="max-width:100%"/>| Command line tool for generating CIM model comparison reports.
  IEC-CIM-Ontology|<a href="https://github.com/cimug-org/IEC-CIM-Ontology">IEC CIM Ontology</a>| Project that explores documentation generation (research).
  CIM Distribution JSON-LD|<a href="https://github.com/cimug-org/CIM_Distribution_JSON-LD">CIM Distribution JSON-LD</a>| The CIM Community repository of JSON-LD examples of CIM data for use as input for a JSON-LD serialisation specification.
  mimir-documentation|<a href="https://github.com/cimug-org/mimir-documentation">mimir-documentation</a>| Project that explores documentation generation (research).
