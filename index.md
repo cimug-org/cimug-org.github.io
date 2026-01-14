@@ -2,26 +2,26 @@
 layout: default
 ---
 
-# The UCA Users Groups Open Source Initiatives
+# The UCA Users Groups Open Source Initiative
 
-Welcome to the official UCA GitHub site for open source projects sponsored by the UCA and its associated Users Groups. This site serves as the companion site to the following UCA User Group community sites:
+Welcome to the official UCA GitHub site for open source projects sponsored by the UCA and its CIM and 61850 Users Groups. This site serves as the companion site to the following UCA User Group community sites:
 
-- CIM Users Group [https://cimug.org](https://cimug.org/).
-- 61850 Users Group [https://61850ug.org](https://61850ug.org/).
-- OpenFMB Users Group [https://openfmb.org](https://openfmb.org//).
+- [UCA CIM Users Group](https://cimug.org/)
+- [UCA 61850 Users Group](https://61850ug.org/)
+
 
 ### Our Mission
 
-The **UCA Users Groups Open Source Initiative** is dedicated to providing open source projects and tooling that benefit the CIM, 61850, and OpenFMB communities with commercially friendly licenses.
+The **UCA Users Groups Open Source Initiative** is dedicated to providing open source projects and tooling that benefit the CIM and 61850 communities with commercially friendly licenses.
 
-### Goals of the UCA Open Source Initiatives
+### Goals of the UCA Open Source Initiative
 
-- Provide awareness of CIM, 61850 and OpenFMB open source projects and tooling
+- Provide awareness of CIM and 61850 open source projects and tooling
 - Promote open source projects that help advance CIM and CIM related standards
-- Provide a central Repository for CIM, 61850 and OpenFMB related open source projects and tooling
-- Provide a centralized place for promoting collaboration around these projects within the UCA Users Group communities
+- Provide a central Repository for CIM and 61850 related open source projects and tooling
+- Provide a centralized place for promoting collaboration around these projects within the UCA CIM and 61850 Users Group communities
 
-To inquire about the CIMug Open Source Initiative or to discuss contributing new projects to the initiative please contact us at [github.admin@cimug.org](mailto:github.admin@cimug.org?subject=[UCA&20Open&20Source&20Admin]&20Open&20Source&20Initiatives).
+To inquire about the CIMug Open Source Initiative or to discuss contributing new projects to the initiative please contact us at [github.admin@cimug.org](mailto:github.admin@cimug.org?subject=[UCA-Open-Source-Initiatives).
 
 # Currently Sponsored Projects
 
