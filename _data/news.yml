@@ -1,0 +1,29 @@
+# "Latest" panel on www.ucaiug.io, newest first. The page shows the first five.
+#
+# Each item:
+#   tag:   NEW RELEASE · LATEST RELEASE · NEW REPO · NOW PUBLIC (green)
+#          UPDATED · NEW FEATURE (teal)        PENDING FEATURE · UPCOMING (amber)
+#   title: short text
+#   date:  DD-Mon-YYYY
+#   url:   optional link
+
+- tag: UPDATED
+  title: utf13-reports and cim-compare sites rebranded
+  date: 05-Oct-2026
+  url: https://utf13-reports.ucaiug.io/
+- tag: NEW RELEASE
+  title: cim-compare 2.0.1
+  date: 29-Sep-2026
+  url: https://github.com/cimug-org/cim-compare/releases
+- tag: NEW RELEASE
+  title: scl-sanitizer 2.10.3
+  date: 21-Sep-2026
+  url: https://github.com/cimug-org/scl-sanitizer/releases
+- tag: NEW RELEASE
+  title: jCleanCim 2.4.0
+  date: 10-Aug-2026
+  url: https://github.com/cimug-org/jCleanCim/releases
+- tag: NEW RELEASE
+  title: CIMTool 2.3.0
+  date: 08-Jun-2026
+  url: https://github.com/cimug-org/CIMTool/releases

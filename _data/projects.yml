@@ -1,0 +1,94 @@
+# Project cards on www.ucaiug.io, grouped in display order.
+#
+# Each project:
+#   name:        card title
+#   description: one sentence (taken from the repo's or site's own description where possible)
+#   repo:        repository name under github.com/cimug-org
+#   site:        project website URL (omit if the project has none)
+#   community:   CIM or 61850 (sets the tag on the card)
+#   screenshot:  file stem in assets/img/projects/ (omit for a text-only card).
+#                Needs <stem>-thumb.webp (720 px wide, 16:10) and <stem>.webp (up to 1600 px).
+#   caption:     lightbox caption for the screenshot
+
+- group: Tools
+  projects:
+    - name: CIMTool
+      description: The UCA CIMug's tool for CIM profiling.
+      repo: CIMTool
+      site: https://cimtool.ucaiug.io/
+      community: CIM
+      screenshot: cimtool
+      caption: "CIMTool 2.3.0: AsciiDoc profile documentation with live preview"
+    - name: cim-compare
+      description: Command-line tool for generating CIM model comparison reports.
+      repo: cim-compare
+      site: https://cim-compare.ucaiug.io/
+      community: CIM
+      screenshot: cim-compare
+      caption: "cim-compare 2.0.1: diagram comparison in an example report"
+    - name: jCleanCim
+      description: Tanja Kostic's jCleanCim for the Common Information Model (CIM).
+      repo: jCleanCim
+      site: https://jcleancim.ucaiug.io/
+      community: CIM
+      screenshot: jcleancim
+      caption: "About jCleanCim, from the Introduction to jCleanCim presentation (August 2026)"
+    - name: CIMTool Builders Library
+      description: Community collection of XSLT builders for generating outputs from CIMTool profiles.
+      repo: CIMTool-Builders-Library
+      site: https://cimtool-builders.ucaiug.io/
+      community: CIM
+      screenshot: cimtool-builders
+      caption: "CIMTool Builders Library home page"
+    - name: scl-sanitizer
+      description: Open-source application for anonymizing IEC 61850 SCL instance files.
+      repo: scl-sanitizer
+      community: "61850"
+      screenshot: scl-sanitizer
+      caption: "scl-sanitizer logo"
+
+- group: Guides and documentation
+  projects:
+    - name: CIM Modeling Guide
+      description: UCAIug CIM Modeling Guide.
+      repo: cim-modeling-guide
+      site: https://cim-mg.ucaiug.io/
+      community: CIM
+      screenshot: cim-modeling-guide
+      caption: "CIM Modeling Guide home page"
+    - name: CPSM & CPSM-NA Profiles
+      description: Online documentation for the Common Power System Model and Network Analysis profiles.
+      repo: cpsm-docs
+      site: https://cpsm-docs.ucaiug.io/
+      community: CIM
+      screenshot: cpsm-docs
+      caption: "CoreEquipment vocabulary page"
+    - name: TF13 CIM Comparison Reports
+      description: Official UCA TF13 online site for CIM model comparison reports.
+      repo: UCA-TF13-CIM-Comparison-Reports
+      site: https://utf13-reports.ucaiug.io/
+      community: CIM
+      screenshot: tf13-reports
+      caption: "Comparison report: Grid18v15 → Grid18v16"
+
+- group: Models and profiles
+  projects:
+    - name: CGMES-CIM17
+      description: CIMTool project and RDFS profiles for the IEC 61970-600-2:2021 (CIM17) standard.
+      repo: CGMES-CIM17
+      community: CIM
+      screenshot: cgmes-cim17
+      caption: "CGMES-CIM17 CIMTool Project README"
+    - name: Avro4CIM
+      description: Experimental use of CIMTool to generate Apache Avro schemas for CIM streaming and real-time exchanges.
+      repo: Avro4CIM
+      community: CIM
+      screenshot: avro4cim
+      caption: "Avro4CIM case study repository"
+    - name: prof-ap-cim
+      description: Application profile of the Profiles Vocabulary (PROF) for describing CIM profiles.
+      repo: prof-ap-cim
+      site: https://www.ucaiug.io/prof-ap-cim/
+      community: CIM
+      screenshot: prof-ap-cim
+      caption: "PROF-AP-CIM resources and how a CIM profile is built"

@@ -1,0 +1,115 @@
+---
+layout: default
+---
+<header class="uca-hero">
+  <img class="uca-hero-mark" src="{{ "/assets/img/brand/CIMug_mark.svg" | relative_url }}" alt="">
+  <div class="uca-wrap">
+    <div class="uca-hero-bar">
+      <span class="uca-ugs">
+        <a href="https://cimug.ucaiug.org/" target="_blank" rel="noopener"><img src="{{ "/assets/img/brand/CIMug_logo_horiz_white.svg" | relative_url }}" alt="CIM Users Group" height="50"></a>
+        <a href="https://61850ug.org/" target="_blank" rel="noopener"><img src="{{ "/assets/img/brand/61850_logo_horiz_white.svg" | relative_url }}" alt="61850 Users Group" height="50"></a>
+      </span>
+      <span class="uca-hero-div" aria-hidden="true"></span>
+      <div class="uca-hero-titles">
+        <div class="uca-label">UCAIug · Open source on GitHub</div>
+        <h1 class="uca-title">{{ site.title }}</h1>
+      </div>
+    </div>
+    <div class="uca-hero-body">
+      <div>
+        <p class="uca-lead">Open-source projects and tooling for the CIM and IEC 61850 communities, sponsored by the UCA and its CIM and 61850 Users Groups, with commercially friendly licenses.</p>
+        <a class="uca-btn uca-btn-primary" href="#projects">Browse projects</a>
+        <a class="uca-btn uca-btn-ghost" href="{{ site.github_org_url }}" target="_blank" rel="noopener">GitHub organization</a>
+      </div>
+      <section class="uca-news" aria-labelledby="latest">
+        <h2 class="uca-news-head" id="latest">Latest</h2>
+        <ul>
+          {%- for item in site.data.news limit: 5 %}
+          {%- assign t = item.tag | upcase %}
+          {%- if t == "UPDATED" or t == "NEW FEATURE" %}{% assign tc = "teal" %}{% elsif t == "PENDING FEATURE" or t == "UPCOMING" %}{% assign tc = "amber" %}{% else %}{% assign tc = "green" %}{% endif %}
+          <li>
+            <span class="uca-pill uca-pill-{{ tc }}">{{ item.tag }}</span>
+            <span class="uca-news-title">{% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</span>
+            <span class="uca-news-date">{{ item.date }}</span>
+          </li>
+          {%- endfor %}
+        </ul>
+      </section>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="uca-wrap">
+    <aside class="uca-newcomer" aria-labelledby="newcomer">
+      <div>
+        <h2 id="newcomer">New to the CIM?</h2>
+        <p>Start with EPRI's <em>Common Information Model Primer: Eleventh Edition</em>, then the UCAIug CIM Modeling Guide.</p>
+      </div>
+      <div class="uca-newcomer-links">
+        <a class="uca-btn uca-btn-outline" href="https://www.epri.com/research/products/000000003002032389" target="_blank" rel="noopener">CIM Primer, 11th Edition <span class="uca-ext" aria-label="(EPRI, external site)">↗</span></a>
+        <a class="uca-btn uca-btn-outline" href="https://cim-mg.ucaiug.io/" target="_blank" rel="noopener">CIM Modeling Guide</a>
+      </div>
+    </aside>
+  </div>
+
+  <section id="projects" class="uca-wrap uca-section" aria-labelledby="projects-head">
+    <h2 class="uca-h2" id="projects-head">Projects</h2>
+    {%- for group in site.data.projects %}
+    <h3 class="uca-group">{{ group.group }}</h3>
+    <div class="uca-grid">
+      {%- for p in group.projects %}
+      {%- capture repo_url %}{{ site.github_org_url }}/{{ p.repo }}{% endcapture %}
+      {%- assign shown = p.site | remove_first: "https://" %}
+      {%- assign last = shown | slice: -1, 1 %}
+      {%- if last == "/" %}{% assign n = shown.size | minus: 1 %}{% assign shown = shown | slice: 0, n %}{% endif %}
+      <article class="uca-card{% if p.screenshot %} uca-has-shot{% endif %}">
+        {%- if p.screenshot %}
+        <button type="button" class="uca-thumb"
+                data-full="{{ "/assets/img/projects/" | append: p.screenshot | append: ".webp" | relative_url }}"
+                data-title="{{ p.name | escape }}" data-caption="{{ p.caption | escape }}"
+                data-site="{{ p.site }}" data-repo="{{ repo_url }}"
+                aria-label="Enlarge screenshot: {{ p.caption | escape }}">
+          <img src="{{ "/assets/img/projects/" | append: p.screenshot | append: "-thumb.webp" | relative_url }}" alt="" loading="lazy" decoding="async" width="720" height="450">
+          <span class="uca-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+        </button>
+        {%- endif %}
+        <div class="uca-card-head">
+          <h4>{{ p.name }}</h4>
+          {%- if p.community == "61850" %}<span class="uca-tag uca-tag-61850">IEC 61850</span>{% else %}<span class="uca-tag uca-tag-cim">CIM</span>{% endif %}
+        </div>
+        <p>{{ p.description }}</p>
+        <div class="uca-card-url">{% if p.site %}{{ shown }}{% else %}GitHub repository{% endif %}</div>
+        <div class="uca-card-links">
+          {%- if p.site %}<a href="{{ p.site }}" target="_blank" rel="noopener">Website →</a>{% endif %}
+          <a href="{{ repo_url }}" target="_blank" rel="noopener">Repository</a>
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+    {%- endfor %}
+    <p class="uca-all-repos"><a href="{{ site.github_org_url }}" target="_blank" rel="noopener">All repositories on GitHub →</a></p>
+  </section>
+
+  <section class="uca-wrap uca-section uca-about" aria-labelledby="about-head">
+    <h2 class="uca-h2" id="about-head">About the initiative</h2>
+    <div class="uca-about-cols">
+      <div>
+        <h3>Our mission</h3>
+        <p>The <strong>UCA Users Groups Open Source Initiative</strong> is dedicated to providing open source projects and tooling that benefit the CIM and 61850 communities with commercially friendly licenses.</p>
+        <h3>Goals of the initiative</h3>
+        <ul>
+          <li>Provide awareness of CIM and 61850 open source projects and tooling</li>
+          <li>Promote open source projects that help advance CIM and CIM related standards</li>
+          <li>Provide a central repository for CIM and 61850 related open source projects and tooling</li>
+          <li>Provide a centralized place for promoting collaboration around these projects within the UCA CIM and 61850 Users Group communities</li>
+        </ul>
+      </div>
+      <div>
+        <div class="uca-ug"><img src="{{ "/assets/img/brand/CIMug_logo_horiz.svg" | relative_url }}" alt="" height="40"><a href="https://cimug.ucaiug.org/" target="_blank" rel="noopener">UCA CIM Users Group →</a></div>
+        <div class="uca-ug"><img src="{{ "/assets/img/brand/61850_logo_horiz.svg" | relative_url }}" alt="" height="40"><a href="https://61850ug.org/" target="_blank" rel="noopener">UCA 61850 Users Group →</a></div>
+        <blockquote>To inquire about the initiative or to discuss contributing a new project, contact <a href="mailto:{{ site.contact_email }}?subject=UCA-Open-Source-Initiatives">{{ site.contact_email }}</a>.</blockquote>
+      </div>
+    </div>
+  </section>
+</main>

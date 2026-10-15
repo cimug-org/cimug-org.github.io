@@ -1,28 +1,183 @@
 ---
 ---
 
-@import "jekyll-theme-minimal";
+@import "jekyll-theme-primer";
 
-.cimug-tagline-link {
-  color: black;
-  font-weight: 600;
+// =====================================================================
+// www.ucaiug.io landing page, CIM Model Management brand (direction A)
+// Spec: Brand and Template KB §3 (palette), §11 (websites); site-style-guide.md.
+// Fonts (KB §11.1): Arial for the header, headings, labels, buttons and tags;
+// body text stays on Primer's system font stack (do not override body font-family).
+// =====================================================================
+
+$cimmm-navy: #0A2E57;
+$cimmm-blue: #0058A9;
+$cimmm-teal: #0097A5;
+$cimmm-light-teal: #7FD3DC;
+$cimmm-green: #00A851;
+$cimmm-amber: #E8A317;
+$cimmm-ink: #231F20;
+$cimmm-muted: #5B6770;
+$cimmm-tint: #EEF4F8;
+$cimmm-note: #F6F9FB;
+$cimmm-rule: #C8D2DA;
+$cimmm-frame: #D5DEE5;
+$cimmm-on-navy: #C9D6E3;
+$cimmm-heading-font: Arial, "Liberation Sans", Helvetica, sans-serif;
+
+html { overflow-x: hidden; }
+body { color: $cimmm-ink; background: #fff; }
+a { color: $cimmm-blue; }
+
+.uca-wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+.uca-label, .uca-title, .uca-btn, .uca-pill, .uca-tag, .uca-h2, .uca-group,
+.uca-news-head, .uca-newcomer h2, .uca-card h4, .uca-about h3 { font-family: $cimmm-heading-font; }
+
+// ---- Buttons --------------------------------------------------------------
+.uca-btn {
+  display: inline-block; margin: 0 4px 6px 0; padding: 9px 16px; border-radius: 4px;
+  border: 1px solid transparent; font-size: 14px; font-weight: 700; line-height: 1.4;
+  &:hover { text-decoration: none; }
+}
+.uca-btn-primary { background: $cimmm-green; color: #fff; &:hover { background: darken($cimmm-green, 5%); color: #fff; } }
+.uca-btn-ghost { border-color: rgba(255,255,255,.5); color: #fff; &:hover { background: rgba(255,255,255,.08); color: #fff; } }
+.uca-btn-outline { border-color: $cimmm-blue; color: $cimmm-blue; background: #fff; &:hover { background: $cimmm-tint; } }
+
+// ---- Hero (navy band) ----------------------------------------------------
+.uca-hero { position: relative; overflow: hidden; background: $cimmm-navy; color: #fff; }
+.uca-hero-mark { position: absolute; right: -90px; top: -40px; height: 360px; width: auto; opacity: .13; pointer-events: none; }
+.uca-hero .uca-wrap { position: relative; }
+.uca-hero-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; padding-top: 26px; }
+.uca-ugs { display: flex; flex: none; align-items: center; gap: 20px; }
+.uca-ugs img { display: block; width: auto; height: 50px; }
+.uca-hero-div { width: 1px; height: 52px; background: rgba(255,255,255,.28); }
+.uca-hero-titles { flex: 1 1 auto; }
+.uca-label { color: $cimmm-light-teal; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.uca-title { margin: 2px 0 0; padding: 0; border: 0; color: #fff; font-size: 26px; font-weight: 700; line-height: 1.2; }
+.uca-hero-body { display: grid; grid-template-columns: 1.25fr 1fr; gap: 40px; align-items: start; padding: 26px 0 34px; }
+.uca-lead { max-width: 560px; margin: 0 0 20px; color: $cimmm-on-navy; font-size: 17px; }
+
+// ---- Latest ----------------------------------------------------------------
+.uca-news { padding: 12px 16px; border: 1px solid rgba(255,255,255,.14); border-radius: 4px; background: rgba(255,255,255,.06); }
+.uca-news-head { margin: 0 0 6px; padding: 0; border: 0; color: $cimmm-light-teal; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.uca-news ul { margin: 0; padding: 0; list-style: none; }
+.uca-news li { display: flex; align-items: baseline; gap: 14px; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,.14); font-size: 14px; }
+.uca-news li:last-child { border-bottom: 0; }
+.uca-pill { flex: none; width: 96px; font-size: 12px; font-weight: 700; letter-spacing: .04em; }
+.uca-pill-green { color: $cimmm-green; }
+.uca-pill-teal { color: $cimmm-teal; }
+.uca-pill-amber { color: $cimmm-amber; }
+.uca-news-title { flex: 1; font-weight: 700; }
+.uca-news-title a { color: #fff; }
+.uca-news-date { color: $cimmm-on-navy; font-size: 13px; white-space: nowrap; }
+
+// ---- New to the CIM? ----------------------------------------------------
+.uca-newcomer {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 34px;
+  padding: 18px 22px; border-left: 4px solid $cimmm-teal; border-radius: 2px; background: $cimmm-note;
+  h2 { margin: 0; padding: 0; border: 0; color: $cimmm-navy; font-size: 18px; font-weight: 700; }
+  p { margin: 4px 0 0; color: $cimmm-muted; font-size: 14px; }
+}
+.uca-newcomer-links { flex: none; }
+.uca-ext { margin-left: 2px; font-weight: 400; }
+
+// ---- Sections and headings ----------------------------------------------
+.uca-section { margin-top: 44px; }
+.uca-h2 {
+  position: relative; margin: 0 0 18px; padding-bottom: 8px; border-bottom: 1px solid $cimmm-rule;
+  color: $cimmm-navy; font-size: 24px; font-weight: 700;
+  &::after { content: ""; position: absolute; left: 0; bottom: -1px; width: 48px; height: 3px; background: $cimmm-teal; }
+}
+.uca-group { margin: 26px 0 12px; color: $cimmm-navy; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+
+// ---- Project cards --------------------------------------------------------
+.uca-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: start; }
+.uca-card {
+  display: flex; flex-direction: column; padding: 16px 18px; border: 1px solid $cimmm-frame; border-radius: 4px; background: #fff;
+  p { flex: 1; margin: 8px 0; font-size: 14px; }
+}
+.uca-has-shot:hover { box-shadow: 0 4px 14px rgba(10,46,87,.10); }
+.uca-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.uca-card h4 { margin: 0; color: $cimmm-navy; font-size: 17px; font-weight: 700; }
+.uca-tag { flex: none; padding: 2px 7px; border-radius: 10px; font-size: 11px; font-weight: 700; letter-spacing: .05em; }
+.uca-tag-cim { background: $cimmm-tint; color: $cimmm-blue; }
+.uca-tag-61850 { background: $cimmm-tint; color: $cimmm-navy; }
+.uca-card-url { margin-bottom: 8px; color: $cimmm-muted; font-size: 12px; overflow-wrap: anywhere; }
+.uca-card-links a { margin-right: 14px; font-size: 14px; font-weight: 700; }
+.uca-all-repos { margin: 20px 0 0; font-weight: 700; }
+
+// Screenshot thumbnail: zooms inside its own frame; opens the lightbox on click/tap/Enter
+.uca-thumb {
+  position: relative; display: block; margin: -16px -18px 14px; padding: 0; overflow: hidden;
+  aspect-ratio: 16 / 10; border: 0; border-bottom: 1px solid $cimmm-frame; border-radius: 4px 4px 0 0;
+  background: $cimmm-tint; cursor: zoom-in;
+  img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top left; transition: transform .25s ease; }
+  &:hover img, &:focus-visible img { transform: scale(1.045); }
+  &:focus-visible { outline: 3px solid $cimmm-teal; outline-offset: 2px; }
+}
+.uca-zoom {
+  position: absolute; right: 10px; bottom: 10px; display: grid; place-items: center; width: 34px; height: 34px;
+  border-radius: 50%; background: $cimmm-navy; color: #fff; opacity: .72; box-shadow: 0 1px 4px rgba(10,46,87,.35);
+  transition: opacity .2s, transform .2s;
+}
+.uca-thumb:hover .uca-zoom, .uca-thumb:focus-visible .uca-zoom { opacity: 1; transform: scale(1.08); }
+
+// ---- Lightbox (native <dialog>) -------------------------------------------
+.uca-lightbox { width: 100%; max-width: min(1200px, 94vw); padding: 0; border: 0; background: transparent; color: $cimmm-ink; }
+.uca-lightbox::backdrop { background: rgba(10,46,87,.82); }
+.uca-lb-inner { position: relative; margin-top: 48px; }
+.uca-lightbox figure { margin: 0; overflow: hidden; border-radius: 6px; background: #fff; box-shadow: 0 18px 50px rgba(0,0,0,.35); }
+.uca-lightbox img { display: block; width: 100%; height: auto; max-height: 76vh; object-fit: contain; background: $cimmm-tint; }
+.uca-lightbox figcaption { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 20px; padding: 12px 18px; }
+.uca-lb-cap b { margin-right: 8px; color: $cimmm-navy; font-family: $cimmm-heading-font; }
+.uca-lb-cap span { color: $cimmm-muted; font-size: 14px; }
+.uca-lb-links a { margin-left: 14px; font-size: 14px; font-weight: 700; }
+.uca-lb-close {
+  position: absolute; top: -44px; right: 0; width: 36px; height: 36px; border: 1px solid rgba(255,255,255,.5);
+  border-radius: 50%; background: transparent; color: #fff; font-size: 20px; line-height: 1; cursor: pointer;
+  &:focus-visible { outline: 3px solid $cimmm-light-teal; }
 }
 
-a.cimug-tagline-link:hover {
-  color: black;
-  font-weight: 600;
-}
+// ---- About ------------------------------------------------------------------
+.uca-about-cols { display: grid; grid-template-columns: 3fr 2fr; gap: 40px; }
+.uca-about h3 { margin: 0 0 6px; color: $cimmm-navy; font-size: 17px; font-weight: 700; }
+.uca-about ul { margin: 0 0 16px; padding-left: 20px; }
+.uca-about li { margin: 3px 0; }
+.uca-ug { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.uca-ug img { width: auto; height: 40px; }
+.uca-ug a { font-size: 14px; font-weight: 700; }
+.uca-about blockquote { margin: 16px 0 0; padding: 12px 16px; border-left: 4px solid $cimmm-teal; background: $cimmm-note; color: $cimmm-ink; font-size: 14px; }
 
-.cimug-desc-link {
-  color: #727272;
-  font-weight: 400;
-}
+// ---- Footer -------------------------------------------------------------------
+.uca-footer { margin-top: 56px; padding: 28px 0; background: $cimmm-navy; color: $cimmm-on-navy; font-size: 14px; }
+.uca-footer a { color: #fff; }
+.uca-footer-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; }
+.uca-footer img { display: block; width: auto; height: 30px; }
 
-a.cimug-desc-link:hover {
-  color: #727272;
-  font-weight: 600;
+// ---- Responsive and motion ------------------------------------------------------
+@media (max-width: 900px) {
+  .uca-grid { grid-template-columns: repeat(2, 1fr); }
 }
-
-.project-title {
-  color: #727272;
+@media (max-width: 600px) {
+  .uca-wrap { padding: 0 16px; }
+  .uca-hero-div { display: none; }
+  .uca-hero-bar { gap: 12px; padding-top: 18px; }
+  .uca-ugs { gap: 14px; }
+  .uca-ugs img { height: 36px; }
+  .uca-title { font-size: 21px; }
+  .uca-hero-body { grid-template-columns: 1fr; gap: 22px; padding: 18px 0 24px; }
+  .uca-hero-mark { right: -80px; height: 240px; }
+  .uca-news li { flex-wrap: wrap; gap: 4px 10px; }
+  .uca-pill { width: auto; }
+  .uca-news-title { flex-basis: 100%; order: 2; }
+  .uca-newcomer { flex-direction: column; align-items: flex-start; }
+  .uca-h2 { font-size: 20px; }
+  .uca-grid { grid-template-columns: 1fr; }
+  .uca-about-cols { grid-template-columns: 1fr; gap: 16px; }
+  .uca-zoom { opacity: .9; }
+  .uca-lb-links a { margin: 0 14px 0 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .uca-thumb img, .uca-zoom { transition: none; }
+  .uca-thumb:hover img, .uca-thumb:focus-visible img { transform: none; }
 }

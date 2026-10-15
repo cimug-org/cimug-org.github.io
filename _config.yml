@@ -1,6 +1,8 @@
-theme: jekyll-theme-minimal
-title: CIMug Open Source Initiative
-logo: /assets/img/cimug-logo-white.png
-description: CIMug GitHub Open Source Projects
-show_downloads: false
-google_analytics:
+theme: jekyll-theme-primer
+title: UCA Users Groups Open Source Initiative
+description: Open-source projects and tooling for the CIM and IEC 61850 communities, sponsored by the UCA and its CIM and 61850 Users Groups.
+lang: en-US
+
+# Used by the landing page (_layouts/default.html, index.html)
+contact_email: github.admin@cimug.org
+github_org_url: https://github.com/cimug-org
