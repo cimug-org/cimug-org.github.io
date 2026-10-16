@@ -34,12 +34,12 @@
       screenshot: jcleancim
       caption: "jcleancim.ucaiug.io home page with the new jCleanCim logo"
     - name: CIMTool Builders Library
-      description: Community collection of XSLT builders for generating outputs from CIMTool profiles.
+      description: "The UCAIug’s CIMTool community repository of publicly available XSLT builders"
       repo: CIMTool-Builders-Library
       site: https://cimtool-builders.ucaiug.io/
       community: CIM
       screenshot: cimtool-builders
-      caption: "CIMTool Builders Library home page"
+      caption: "CIMTool Builders Library logo"
     - name: scl-sanitizer
       description: Open-source application for anonymizing IEC 61850 SCL instance files.
       repo: scl-sanitizer
