@@ -34,7 +34,7 @@
       screenshot: jcleancim
       caption: "jcleancim.ucaiug.io home page with the new jCleanCim logo"
     - name: CIMTool Builders Library
-      description: "The UCAIug’s CIMTool community repository of publicly available XSLT builders"
+      description: "The UCAIug’s CIMTool community repository of publicly available XSLT builders."
       repo: CIMTool-Builders-Library
       site: https://cimtool-builders.ucaiug.io/
       community: CIM
