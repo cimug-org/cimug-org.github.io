@@ -24,14 +24,33 @@ layout: default
       <section class="uca-news" aria-labelledby="latest">
         <h2 class="uca-news-head" id="latest">Latest</h2>
         <ul>
-          {%- for item in site.data.news limit: 6 %}
+          {%- comment %} Latest-panel rule (style guide §8): at most 4 rows. N = website updates (tag UPDATED)
+               dated within 30 days of the build, at most 2; then the newest 4 - N releases (NEW RELEASE /
+               LATEST RELEASE). _data/news.yml is newest first, so rows come out in that order. {% endcomment %}
+          {%- assign cutoff = site.time | date: "%s" | minus: 2592000 %}
+          {%- assign n = 0 %}
+          {%- for item in site.data.news %}
+            {%- assign t = item.tag | upcase %}
+            {%- assign ts = item.date | date: "%s" | plus: 0 %}
+            {%- if t == "UPDATED" and ts >= cutoff and n < 2 %}{% assign n = n | plus: 1 %}{% endif %}
+          {%- endfor %}
+          {%- assign x = 4 | minus: n %}
+          {%- assign w = 0 %}{% assign r = 0 %}
+          {%- for item in site.data.news %}
           {%- assign t = item.tag | upcase %}
+          {%- assign ts = item.date | date: "%s" | plus: 0 %}
+          {%- assign show = false %}
+          {%- if t == "UPDATED" %}{% if ts >= cutoff and w < n %}{% assign show = true %}{% assign w = w | plus: 1 %}{% endif %}
+          {%- elsif t == "NEW RELEASE" or t == "LATEST RELEASE" %}{% if r < x %}{% assign show = true %}{% assign r = r | plus: 1 %}{% endif %}
+          {%- endif %}
+          {%- if show %}
           {%- if t == "UPDATED" or t == "NEW FEATURE" %}{% assign tc = "teal" %}{% elsif t == "PENDING FEATURE" or t == "UPCOMING" %}{% assign tc = "amber" %}{% else %}{% assign tc = "green" %}{% endif %}
           <li>
             <span class="uca-pill uca-pill-{{ tc }}">{{ item.tag }}</span>
             <span class="uca-news-title">{% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</span>
             <span class="uca-news-date">{{ item.date }}</span>
           </li>
+          {%- endif %}
           {%- endfor %}
         </ul>
       </section>
