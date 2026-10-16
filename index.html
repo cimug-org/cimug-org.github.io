@@ -24,7 +24,7 @@ layout: default
       <section class="uca-news" aria-labelledby="latest">
         <h2 class="uca-news-head" id="latest">Latest</h2>
         <ul>
-          {%- for item in site.data.news limit: 5 %}
+          {%- for item in site.data.news limit: 6 %}
           {%- assign t = item.tag | upcase %}
           {%- if t == "UPDATED" or t == "NEW FEATURE" %}{% assign tc = "teal" %}{% elsif t == "PENDING FEATURE" or t == "UPCOMING" %}{% assign tc = "amber" %}{% else %}{% assign tc = "green" %}{% endif %}
           <li>

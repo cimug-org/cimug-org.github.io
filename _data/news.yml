@@ -1,4 +1,4 @@
-# "Latest" panel on www.ucaiug.io, newest first. The page shows the first five.
+# "Latest" panel on www.ucaiug.io, newest first. The page shows the first six.
 #
 # Each item:
 #   tag:   NEW RELEASE · LATEST RELEASE · NEW REPO · NOW PUBLIC (green)
@@ -7,6 +7,10 @@
 #   date:  DD-Mon-YYYY
 #   url:   optional link
 
+- tag: UPDATED
+  title: jcleancim.ucaiug.io rebranded with a new jCleanCim logo
+  date: 16-Oct-2026
+  url: https://jcleancim.ucaiug.io/
 - tag: UPDATED
   title: utf13-reports and cim-compare sites rebranded
   date: 05-Oct-2026

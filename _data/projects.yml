@@ -32,7 +32,7 @@
       site: https://jcleancim.ucaiug.io/
       community: CIM
       screenshot: jcleancim
-      caption: "About jCleanCim, from the Introduction to jCleanCim presentation (August 2026)"
+      caption: "jcleancim.ucaiug.io home page with the new jCleanCim logo"
     - name: CIMTool Builders Library
       description: Community collection of XSLT builders for generating outputs from CIMTool profiles.
       repo: CIMTool-Builders-Library
