@@ -1,6 +1,7 @@
 theme: jekyll-theme-primer
 title: UCA Users Groups Open Source Initiative
 description: Open-source projects and tooling for the CIM and IEC 61850 communities, sponsored by the UCA and its CIM and 61850 Users Groups.
+tagline: Open source for the CIM and 61850 communities
 lang: en-US
 
 # Used by the landing page (_layouts/default.html, index.html)
