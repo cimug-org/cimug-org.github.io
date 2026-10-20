@@ -27,14 +27,14 @@
       screenshot: cim-compare
       caption: "cim-compare 2.0.1: diagram comparison in an example report"
     - name: jCleanCim
-      description: Tanja Kostic's jCleanCim for the Common Information Model (CIM).
+      description: Validation and IEC document generation for CIM UML models.
       repo: jCleanCim
       site: https://jcleancim.ucaiug.io/
       community: CIM
       screenshot: jcleancim
       caption: "jcleancim.ucaiug.io home page with the new jCleanCim logo"
     - name: CIMTool Builders Library
-      description: "The UCAIug’s CIMTool community repository of publicly available XSLT builders."
+      description: "The UCAIug’s community repository of publicly available CIMTool builders."
       repo: CIMTool-Builders-Library
       site: https://cimtool-builders.ucaiug.io/
       community: CIM
