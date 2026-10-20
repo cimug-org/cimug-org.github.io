@@ -50,7 +50,7 @@
 - group: Guides and documentation
   projects:
     - name: CIM Modeling Guide
-      description: UCAIug CIM Modeling Guide.
+      description: UML modeling rules and guidelines for the CIM.
       repo: cim-modeling-guide
       site: https://cim-mg.ucaiug.io/
       community: CIM
