@@ -63,8 +63,8 @@
       community: CIM
       screenshot: cpsm-docs
       caption: "CoreEquipment vocabulary page"
-    - name: TF13 CIM Comparison Reports
-      description: Official UCA TF13 online site for CIM model comparison reports.
+    - name: TF13 CIM Grid Package Releases
+      description: Published and interim releases of the CIM Grid package from UCA TF13, with release notes and comparison reports.
       repo: UCA-TF13-CIM-Comparison-Reports
       site: https://utf13-reports.ucaiug.io/
       community: CIM
