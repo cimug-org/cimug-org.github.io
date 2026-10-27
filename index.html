@@ -26,22 +26,38 @@ layout: default
         <ul>
           {%- comment %} Latest-panel rule (style guide §8): at most 4 rows. N = website updates (tag UPDATED)
                dated within 30 days of the build, at most 2; then the newest 4 - N releases (NEW RELEASE /
-               LATEST RELEASE). _data/news.yml is newest first, so rows come out in that order. {% endcomment %}
+               LATEST RELEASE). Only the newest row per website or project is shown: an UPDATED row is keyed
+               by its title (the site address), a release row by its title without the last word (the
+               version), so "cim-compare 2.1.0" hides "cim-compare 2.0.1". _data/news.yml is newest first,
+               so the first row for each key is the newest and rows come out in that order. {% endcomment %}
           {%- assign cutoff = site.time | date: "%s" | minus: 2592000 %}
-          {%- assign n = 0 %}
+          {%- assign n = 0 %}{% assign seen = "|" %}
           {%- for item in site.data.news %}
             {%- assign t = item.tag | upcase %}
             {%- assign ts = item.date | date: "%s" | plus: 0 %}
-            {%- if t == "UPDATED" and ts >= cutoff and n < 2 %}{% assign n = n | plus: 1 %}{% endif %}
+            {%- assign k = item.title | downcase | prepend: "u:" | append: "|" %}{% assign probe = k | prepend: "|" %}
+            {%- if t == "UPDATED" and ts >= cutoff and n < 2 %}{% unless seen contains probe %}{% assign n = n | plus: 1 %}{% assign seen = seen | append: k %}{% endunless %}{% endif %}
           {%- endfor %}
           {%- assign x = 4 | minus: n %}
-          {%- assign w = 0 %}{% assign r = 0 %}
+          {%- assign w = 0 %}{% assign r = 0 %}{% assign seen = "|" %}
           {%- for item in site.data.news %}
           {%- assign t = item.tag | upcase %}
           {%- assign ts = item.date | date: "%s" | plus: 0 %}
           {%- assign show = false %}
-          {%- if t == "UPDATED" %}{% if ts >= cutoff and w < n %}{% assign show = true %}{% assign w = w | plus: 1 %}{% endif %}
-          {%- elsif t == "NEW RELEASE" or t == "LATEST RELEASE" %}{% if r < x %}{% assign show = true %}{% assign r = r | plus: 1 %}{% endif %}
+          {%- if t == "UPDATED" %}
+            {%- assign k = item.title | downcase | prepend: "u:" | append: "|" %}{% assign probe = k | prepend: "|" %}
+            {%- unless seen contains probe %}{% assign seen = seen | append: k %}
+            {%- if ts >= cutoff and w < n %}{% assign show = true %}{% assign w = w | plus: 1 %}{% endif %}
+            {%- endunless %}
+          {%- elsif t == "NEW RELEASE" or t == "LATEST RELEASE" %}
+            {%- assign words = item.title | split: " " %}
+            {%- assign version = words | last %}
+            {%- assign len = item.title.size | minus: version.size | minus: 1 %}
+            {%- if words.size > 1 %}{% assign name = item.title | slice: 0, len %}{% else %}{% assign name = item.title %}{% endif %}
+            {%- assign k = name | downcase | prepend: "r:" | append: "|" %}{% assign probe = k | prepend: "|" %}
+            {%- unless seen contains probe %}{% assign seen = seen | append: k %}
+            {%- if r < x %}{% assign show = true %}{% assign r = r | plus: 1 %}{% endif %}
+            {%- endunless %}
           {%- endif %}
           {%- if show %}
           {%- if t == "UPDATED" or t == "NEW FEATURE" %}{% assign tc = "teal" %}{% elsif t == "PENDING FEATURE" or t == "UPCOMING" %}{% assign tc = "amber" %}{% else %}{% assign tc = "green" %}{% endif %}
