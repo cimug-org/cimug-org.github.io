@@ -13,6 +13,14 @@
 #   url:   optional link
 
 - tag: NEW RELEASE
+  title: cim-compare 2.3.0
+  date: 30-Oct-2026
+  url: https://github.com/cimug-org/cim-compare/releases
+- tag: UPDATED
+  title: cim-compare.ucaiug.io
+  date: 30-Oct-2026
+  url: https://cim-compare.ucaiug.io/
+- tag: NEW RELEASE
   title: cim-compare 2.2.0
   date: 29-Oct-2026
   url: https://github.com/cimug-org/cim-compare/releases
