@@ -29,7 +29,9 @@ html { overflow-x: hidden; }
 body { color: $cimmm-ink; background: #fff; }
 a { color: $cimmm-blue; }
 
-.uca-wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+// Content column: capped at 1,440 px, fluid below it; 32 px gutters (16 px <= 600 px).
+// Cards stay at three columns at every width above 900 px (style guide §3, §8).
+.uca-wrap { max-width: 1440px; margin: 0 auto; padding: 0 32px; }
 .uca-label, .uca-title, .uca-btn, .uca-pill, .uca-tag, .uca-h2, .uca-group,
 .uca-news-head, .uca-newcomer h2, .uca-card h4, .uca-about h3 { font-family: $cimmm-heading-font; }
 
@@ -140,6 +142,11 @@ a { color: $cimmm-blue; }
 
 // ---- About ------------------------------------------------------------------
 .uca-about-cols { display: grid; grid-template-columns: 3fr 2fr; gap: 40px; }
+// Wide windows: cap the mission/goals column at 72ch (about 93 characters per line);
+// the users-group column takes the rest. At 1,200 px the two layouts are almost the same width.
+@media (min-width: 1200px) {
+  .uca-about-cols { grid-template-columns: minmax(0, 72ch) minmax(0, 1fr); gap: 56px; }
+}
 .uca-about h3 { margin: 0 0 6px; color: $cimmm-navy; font-size: 17px; font-weight: 700; }
 .uca-about ul { margin: 0 0 16px; padding-left: 20px; }
 .uca-about li { margin: 3px 0; }
