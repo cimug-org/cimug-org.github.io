@@ -18,7 +18,7 @@
       site: https://cimtool.ucaiug.io/
       community: CIM
       screenshot: cimtool
-      caption: "CIMTool 2.3.0: AsciiDoc profile documentation with live preview"
+      caption: "CIMTool 2.3.1: a profile with its generated XSD, AsciiDoc documentation and diagram"
     - name: cim-compare
       description: Command-line tool for generating CIM model comparison reports.
       repo: cim-compare
